@@ -1,0 +1,22 @@
+# EE569 Homework Assignment #4
+# Date: Dec 1, 2013
+# Name: Xiang Gao
+# ID: 9216-3489-10
+# Email: xianggao@usc.edu
+# Compiled on Ubuntu 13.04 with g++
+
+# Please put all images required in these problems in the same folder with the codes.
+# Please use "make -f README" to compile and run the codes
+# As for matlab codes(e.g plotting histograms), please follow the instructions 
+# 	printed on the screen after running the C code. 
+# Note that some code in source files are commented. That's for experiments carried out
+# 	just for some discussion in the report. Those may needs additional input images.
+
+# "getVideo.m" is used to get a video from image frames.
+# "MyFiltering.cpp" contains functions related to filtering.
+# "MyIO.cpp" contains codes about reading/writing raw images.
+# "MyDIPFunction.cpp" contains a lot function that used in project.
+# "solution1","solution2","solution3" are source files for prob 1,2,3 respectively.
+
+# In this project, I used OpenCV2.0. So when compiling, make sure you have installed OpenCV2.0 and it's correctly configured.
+# Create a project with CodeBlock, add "solution1(2,3).cpp" "MyFiltering.cpp" "MyFiltering.h" "MyIO.cpp" "MyIO.h" "MyDIPFunction.cpp" "MyDIPFunction.h" into project and compile.

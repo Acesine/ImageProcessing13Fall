@@ -1,0 +1,58 @@
+# EE569 Homework Assignment #1
+# Date: Sep 19, 2013
+# Name: Xiang Gao
+# ID: 9216-3489-10
+# Email: xianggao@usc.edu
+# Compiled on Ubuntu 13.04 with g++
+
+# Please put all images required in these problems in the same folder with the codes.
+# Please use "make -f README" to compile and run the codes
+# As for matlab codes(e.g plotting histograms), please follow the instructions 
+# 	printed on the screen after running the C code. 
+# Note that some code in source files are commented. That's for experiments carried out
+# 	just for some discussion in the report. Those may needs additional input images.
+
+# "drawhistfromfile.m" is used to draw histogram in matlab with data from C program.
+# "MyFiltering.cpp" contains functions related to filtering.
+# "MyIO.cpp" contains codes about reading/writing raw images
+# "README" file is a makefile
+# "showhistnfunction_1(2,3).m" are used to show histogram and functions in problem 1,2,3 respectively.
+# "solution1(2,3).cpp" are C source code of problem 1,2,3 respectively.
+# "solution_bm3d.m" is used to do denoising with BM3D.
+
+
+CC=g++
+LN=g++
+All : prob1 prob2 prob3
+prob1:
+	@echo "Problem 1 begins:"
+	@echo "Compiling and linking the code..."
+	$(CC) -c solution1.cpp MyIO.cpp
+	$(LN) -o solution1 solution1.o MyIO.o
+	@echo "Running the program..."
+	./solution1
+	@echo "Open 'showhistnfunction_1.m' with MATLAB to draw histograms and transfer functions of this problem."
+	@echo "Problem 1 ends."
+prob2:
+	@echo "Problem 2 begins:"
+	@echo "Compiling and linking the code..."
+	$(CC) -c solution2.cpp MyIO.cpp
+	$(LN) -o solution2 solution2.o MyIO.o
+	@echo "Running the program..."
+	./solution2
+	@echo "Open 'showhistnfunction_2.m' with MATLAB to draw histograms and transfer functions of this problem."
+	@echo "Problem 2 ends."
+prob3:
+	@echo "Problem 3 begins:"
+	@echo "Compiling and linking the code..."
+	$(CC) -c solution3.cpp MyIO.cpp MyFiltering.cpp
+	$(LN) -o solution3 solution3.o MyIO.o MyFiltering.o
+	@echo "Running the program..."
+	./solution3
+	@echo "Open 'showhistnfunction_3.m' with MATLAB to draw histograms and transfer functions of this problem."
+	@echo "Use 'solution_bm3d.m' to get results of part (d)."
+	@echo "Problem 3 ends."
+	
+clean:
+	rm *.dat *_out.raw *.o solution1 solution2 solution3
+
